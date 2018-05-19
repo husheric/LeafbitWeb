@@ -15,7 +15,7 @@
     align-items: center;
     border-radius: 2px;
     cursor: pointer;
-    transition: 0.2s all;
+    transition: 0.3s all;
 }
 
 .seed-container:hover {
@@ -31,6 +31,7 @@
 .seed-img-container img {
     height: 140px;
     width: auto;
+    transition: 0.2s all;
 }
 
 .seed-container .name {
@@ -45,9 +46,27 @@
     font-size: 1.8rem;
 }
 
-
-@media screen and (max-width: 400px) {
+/* Tablet */
+@media screen and (max-width: 800px) {
     .seed-container {
-        background-color: blue;
+        width: 90%;
+    }
+    .seed-img-container img {
+        height: 100px;
+    }
+}
+
+/* Phone */
+@media screen and (max-width: 400px) {
+    .seed-img-container img {
+        height: 65px;
+    }
+    .seed-container .name {
+        font-size: 1.4rem;
+        width: 55%;
+    }
+    .seed-container .cost {
+        font-size: 1.4rem;
+        width: 20%;
     }
 }
