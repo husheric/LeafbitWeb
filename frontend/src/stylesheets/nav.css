@@ -3,3 +3,15 @@
 .sidebar {
     background-color: salmon;
 }
+
+.sidebar a {
+    color: #ffffff;
+}
+
+.sidebar-hidden {
+    background-color: red;
+}
+
+.sidebar-visible {
+    background-color: purple;
+}
