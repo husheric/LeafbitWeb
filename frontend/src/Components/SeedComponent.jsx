@@ -3,6 +3,7 @@ import cactus from '../images/cactus.png';
 import pine_tree from '../images/pine_tree.png';
 import tall_tree from '../images/tall_tree.png';
 import tree from '../images/tree.png';
+import '../stylesheets/marketplace.css';
 
 /*
 	____TODOS____
@@ -12,11 +13,11 @@ import tree from '../images/tree.png';
 	seed info - price, name, image
 */
 
-const style = {
-	border: '5px solid black',
-	width: '350px',
-	height: '350px'
-}
+// const style = {
+// 	border: '5px solid black',
+// 	width: '350px',
+// 	height: '350px'
+// }
 
 const seedDict = {
 	cactus: cactus,
@@ -29,10 +30,12 @@ class SeedComponent extends Component {
 	render() {
 		const { seed, handleOpenModal } = this.props;
 		return (
-			<div style={style} onClick={() => handleOpenModal(seed)} >
-				<img src={seedDict[seed.image]} />
-				<h1>{seed.name}</h1>
-				<h2>${seed.cost}</h2>
+			<div className="seed-container" onClick={() => handleOpenModal(seed)} >
+				<div className="seed-img-container">
+					<img src={seedDict[seed.image]} />
+				</div>
+				<h1 className="name">{seed.displayName}</h1>
+				<h1 className="cost">${seed.cost}</h1>
 			</div>
 		)
 	}

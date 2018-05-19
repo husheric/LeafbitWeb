@@ -17,10 +17,10 @@ class Marketplace extends Component {
 		super();
 
 		this.seeds = [
-			{ name: 'cactus', cost: 5, image: 'cactus' },
-			{ name: 'tree', cost: 1, image: 'tree' },
-			{ name: 'pine_tree', cost: 3, image: 'pine_tree' },
-			{ name: 'tall_tree', cost: 4, image: 'tall_tree' }
+			{ displayName: 'Cactus', name: 'cactus', cost: 5, image: 'cactus' },
+			{ displayName: 'Apple Tree', name: 'tree', cost: 1, image: 'tree' },
+			{ displayName: 'Pine Tree', name: 'pine_tree', cost: 3, image: 'pine_tree' },
+			{ displayName: 'Tall Tree', name: 'tall_tree', cost: 4, image: 'tall_tree' }
 		];
 
 		this.state = {
@@ -66,7 +66,8 @@ class Marketplace extends Component {
 				{this.state.seed &&
 					<Modal
 						isOpen={this.state.showModal}
-						contentLabel="Minimal Modal Example"
+						contentLabel="PurchaseModal"
+						onRequestClose={this.handleCloseModal}
 					>
 						<button onClick={this.handleCloseModal}>Close</button>
 						<form onSubmit={this.handleSubmit} >

@@ -1,5 +1,53 @@
 /* MARKETPLACE CONTAINER */
 
 .marketplace-container {
-    background-color: blue;
+    width: 100%;
+}
+
+/* SEED COMPONENT */
+.seed-container {
+    background-color: #ffffff;
+    display: flex;
+    margin: 1.2rem auto;
+    padding: .8rem;
+    width: 68%;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 2px;
+    cursor: pointer;
+    transition: 0.2s all;
+}
+
+.seed-container:hover {
+    transform: translateY(-2px);
+}
+
+.seed-img-container {
+    width: 25%;
+    display: flex;
+    justify-content: center;
+}
+
+.seed-img-container img {
+    height: 140px;
+    width: auto;
+}
+
+.seed-container .name {
+    width: 45%;
+    font-size: 1.8rem;
+    text-align: center;
+}
+
+.seed-container .cost {
+    width: 30%;
+    text-align: center;
+    font-size: 1.8rem;
+}
+
+
+@media screen and (max-width: 400px) {
+    .seed-container {
+        background-color: blue;
+    }
 }

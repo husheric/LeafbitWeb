@@ -24,7 +24,7 @@ class App extends Component {
 
     return (
       <div>
-        <nav className="sidebar">
+        {/* <nav className="sidebar">
           <div onClick={this.handleSidebar}>
             <i className="fas fa-caret-right"></i>
           </div>
@@ -33,7 +33,7 @@ class App extends Component {
             <Link to="/plant"><i className="fas fa-tree"></i></Link>
             <Link to="/profile"><i className="fas fa-user"></i></Link>
           </div>
-        </nav>
+        </nav> */}
         <Switch>
           <Route exact path="/" component={Marketplace} />
           <Route path="/plant" component={Marketplace} />
