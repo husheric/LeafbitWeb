@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import SeedComponent from './SeedComponent';
 import Modal from 'react-modal';
+import '../stylesheets/marketplace.css';
 
 /*
 	____TODOS____
@@ -55,7 +56,7 @@ class Marketplace extends Component {
 	render() {
 		console.log(this.state)
 		return (
-			<div>
+			<div className="marketplace-container">
 				{this.seeds.map(seed => (
 					<SeedComponent
 						seed={seed}
@@ -63,18 +64,18 @@ class Marketplace extends Component {
 					/>
 				))}
 				{this.state.seed &&
-					<Modal 
-	          isOpen={this.state.showModal}
-	          contentLabel="Minimal Modal Example"
-	        >
-	          <button onClick={this.handleCloseModal}>Close</button>
-	          <form onSubmit={this.handleSubmit} >
-	          	Donation: $<input type='number' min='0.00' step='0.01' value={this.state.seed.paymentAmount} onChange={this.handlePaymentChange}/>
-	          	<input type='submit' value='buy' />
-	          	<input type='submit' value='gift' />
-	          </form>
-	        </Modal>
-	      }
+					<Modal
+						isOpen={this.state.showModal}
+						contentLabel="Minimal Modal Example"
+					>
+						<button onClick={this.handleCloseModal}>Close</button>
+						<form onSubmit={this.handleSubmit} >
+							Donation: $<input type='number' min='0.00' step='0.01' value={this.state.seed.paymentAmount} onChange={this.handlePaymentChange} />
+							<input type='submit' value='buy' />
+							<input type='submit' value='gift' />
+						</form>
+					</Modal>
+				}
 			</div>
 		)
 	}
