@@ -4,7 +4,8 @@ import Homepage from './Components/Homepage';
 import Marketplace from './Components/Marketplace';
 import TreeProgress from './Components/TreeProgress';
 import './stylesheets/App.css';
-import TreeMap from './Components/TreeMap'
+import TreeMap from './Components/TreeMap';
+import Profile from './Components/Profile';
 
 class App extends Component {
   constructor() {
@@ -46,7 +47,7 @@ class App extends Component {
           <Route exact path="/" component={TreeProgress} />
           <Route path="/market" component={Marketplace} />
           <Route path="/map" component={TreeMap} />
-          <Route path="/profile" component={Marketplace} />
+          <Route path="/profile" component={Profile} />
         </Switch>
       </div>
     );
