@@ -67,7 +67,6 @@ class Marketplace extends Component {
 
 	// When user chooses a plant 
 	toggleActive = (seed) => {
-		// const { activeSeed } = this.state;
 		this.setState({ activeSeed: seed })
 	}
 
@@ -87,7 +86,7 @@ class Marketplace extends Component {
 
 		return (
 			<div className="marketplace-container">
-				<h1 className="title">Choose one:</h1>
+				<h1 className="title">Choose one</h1>
 				{this.seeds.map(seed => (
 					<SeedComponent
 						seed={seed}

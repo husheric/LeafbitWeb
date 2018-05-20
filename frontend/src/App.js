@@ -21,8 +21,9 @@ class App extends Component {
   }
 
   render() {
-    console.log(this.state)
-    const sidebarClass = this.state.sidebar ? `hidden` : `visible`
+    console.log(this.state);
+    const { sidebar } = this.state;
+    const sidebarClass = sidebar ? `visible` : `hidden`;
 
     return (
       <div>
