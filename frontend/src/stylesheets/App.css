@@ -1,6 +1,46 @@
+/* SIDE NAVIGATION BAR */
+
+.sidebar {
+  background-color: salmon;
+  display: flex;
+  flex-direction: column;
+  width: 56px;
+  height: 100vh;
+  position: fixed;
+  top: 57.6px;
+  align-items: center;
+  z-index: 9;
+}
+
+.sidebar a {
+  display: inline-block;
+  color: #ffffff;
+  padding: .8rem 0;
+}
+
+.sidebar-hidden {
+  background-color: rgba(255, 0, 0, 0.2);
+}
+
+.sidebar-visible {
+  background-color: rgba(255, 0, 255, 0.2);
+}
+
 
 /* TOP BAR */
 .top {
   background-color: rgba(10, 0, 18, 0.2);
-  padding: .8rem;
+  padding: .8rem .6rem;
+  display: flex;
+  align-items: flex-end;
+}
+
+.top div {
+  color: #ffffff;
+  display: inline-block;
+  cursor: pointer;
+}
+
+#top-logo {
+  padding: 0 .8rem;
 }
