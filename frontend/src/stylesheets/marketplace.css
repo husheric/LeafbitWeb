@@ -8,7 +8,9 @@
 
 .marketplace-container .title {
     font-size: 1.6rem;
-    background-color: rgba(255, 0, 0, 0.2);
+    padding: .8rem;
+    padding-bottom: 0;
+    text-align: center;
 }
 
 .marketplace-container button {
@@ -32,6 +34,10 @@
     color: #ffffff;
 }
 
+.marketplace-container button:active {
+    outline: none;
+}
+
 /* SEED COMPONENT */
 .seed-container {
     background-color: #ffffff;
@@ -50,10 +56,6 @@
 .seed-active {
     border: 2px solid rgba(0, 194, 145, 0.8);
 }
-
-/* .seed-container:hover {
-    transform: translateY(-2px);
-} */
 
 .seed-img-container {
     width: 25%;
