@@ -25,10 +25,15 @@
 
 .map-container button:hover {
     background-color: rgba(0, 194, 145, 0.8);
-    color: #ffffff;
+    color: #ffffff;    
 }
 
 .map-container button:active,
 .map-container button:focus {
     outline: none;
+}
+
+.cursor-tree {
+    cursor: auto;
+    cursor: url('../images/pine_tree.png') 4 4, auto;
 }

@@ -352,7 +352,8 @@ class TreeMap extends Component {
                 lng: -73.941878
             },
             zoom: 13,
-            treeMarkers: []
+            treeMarkers: [],
+            newMarker: false
         }
     }
 
@@ -411,11 +412,12 @@ class TreeMap extends Component {
     }
 
     render() {
-        const { center, zoom, treeMarkers } = this.state
-        // console.log(this.state)
+        const { center, zoom, treeMarkers, newMarker } = this.state
+        console.log(this.state)
+        const cursorClass = newMarker ? `cursor-tree` : null
 
         return (
-            <div className="map-container">
+            <div className={`map-container ${cursorClass}`}>
                 <button onClick={this.handleNewMarker}>Plant a tree</button>
 
                 <GoogleMap
