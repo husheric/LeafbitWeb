@@ -6,6 +6,11 @@ import TreeProgress from './Components/TreeProgress';
 import './stylesheets/nav.css';
 import './stylesheets/App.css';
 
+import TreeMap from './Components/TreeMap'
+// import logo from './logo.svg';
+// import './App.css';
+
+
 class App extends Component {
   constructor() {
     super()

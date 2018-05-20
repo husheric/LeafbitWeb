@@ -20,8 +20,8 @@ CREATE TABLE tree_markers (
   id SERIAL PRIMARY KEY,
   planted_by INTEGER REFERENCES users (id),
   tree VARCHAR,
-  latitude VARCHAR NOT NULL,
-  longitude VARCHAR NOT NULL,
+  lat VARCHAR NOT NULL,
+  lng VARCHAR NOT NULL,
   timestamp timestamp DEFAULT CURRENT_TIMESTAMP
 );
 
@@ -32,7 +32,7 @@ INSERT INTO trees (user_id, tree)
   VALUES (1, 'cactus'),
     (1, 'pine_tree');
 
-INSERT INTO tree_markers (planted_by, tree, latitude, longitude)
+INSERT INTO tree_markers (planted_by, tree, lat, lng)
   VALUES (1, 'cactus', '40.7469446', '-73.951878'),
     (1, 'cactus', '40.7529446', '-73.944878'),
     (1, 'tree', '40.7349446', '-73.936878'),
