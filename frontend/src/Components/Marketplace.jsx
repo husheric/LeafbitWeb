@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Redirect } from 'react-router-dom';
 import SeedComponent from './SeedComponent';
 import Purchase from './Purchase';
 import Modal from 'react-modal';
@@ -27,7 +28,8 @@ class Marketplace extends Component {
 		this.state = {
 			// showModal: false,
 			// seed: {},
-			activeSeed: {}
+			activeSeed: {},
+			formSubmitted: false
 		}
 	}
 
@@ -70,10 +72,18 @@ class Marketplace extends Component {
 	}
 
 	// When user clicks next 
+	handleNext = () => {
+		// Save the user's seed choice to database and switch pages 
+		this.setState({ formSubmitted: true })
+	}
 
 	render() {
-		console.log(this.state)
-		const { activeSeed } = this.state;
+		const { activeSeed, formSubmitted } = this.state;
+		console.log(this.state);
+
+		if (formSubmitted) {
+			return <Redirect to="/" />
+		}
 
 		return (
 			<div className="marketplace-container">
@@ -83,10 +93,9 @@ class Marketplace extends Component {
 						seed={seed}
 						activeSeed={activeSeed}
 						toggleActive={this.toggleActive}
-					// handleOpenModal={this.handleOpenModal}
 					/>
 				))}
-				<button>Next</button>
+				<button onClick={this.handleNext}>Next</button>
 				{/* {seed &&
 					<Modal
 						isOpen={this.state.showModal}

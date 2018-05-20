@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Link, Route, Switch } from 'react-router-dom';
 import Homepage from './Components/Homepage';
 import Marketplace from './Components/Marketplace';
+import TreeProgress from './Components/TreeProgress';
 import './stylesheets/nav.css';
 import './stylesheets/App.css';
 
@@ -39,8 +40,8 @@ class App extends Component {
           <img src="../assets/icon.png" alt="Leafbit" />
         </div>
         <Switch>
-          <Route exact path="/" component={Marketplace} />
-          <Route path="/plant" component={Marketplace} />
+          <Route exact path="/" component={TreeProgress} />
+          <Route path="/market" component={Marketplace} />
           <Route path="/profile" component={Marketplace} />
         </Switch>
       </div>
