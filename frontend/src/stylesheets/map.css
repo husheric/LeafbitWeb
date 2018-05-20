@@ -1,0 +1,39 @@
+/* TREE MAP */
+
+.map-container {
+    width: 100vw;
+    height: 90vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.map-container button {
+    outline: none;
+    border: none;
+    border: 2px solid rgba(0, 194, 145, 0.8);
+    background-color: transparent;
+    border-radius: 2px;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 100;
+    font-size: 1.6rem;
+    padding: 0.8rem;
+    width: 160px;
+    cursor: pointer;
+    transition: 0.2s all;
+    margin: 0.8rem auto;
+}
+
+.map-container button:hover {
+    background-color: rgba(0, 194, 145, 0.8);
+    color: #ffffff;    
+}
+
+.map-container button:active,
+.map-container button:focus {
+    outline: none;
+}
+
+.cursor-tree {
+    cursor: auto;
+    cursor: url('../images/pine_tree.png') 4 4, auto;
+}

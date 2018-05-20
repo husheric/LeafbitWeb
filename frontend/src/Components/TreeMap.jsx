@@ -2,10 +2,9 @@ import React, { Component } from 'react';
 import GoogleMap, { Marker } from 'google-map-react';
 import { geolocated } from 'react-geolocated';
 import axios from 'axios';
-import cactus from '../images/cactus.png';
-
-// import map_options from '../util';
+import '../stylesheets/map.css';
 import TreeMarker from './TreeMarker';
+// import map_options from '../util';
 // import google_map_api_key from '../util';
 
 const google_map_api_key = 'AIzaSyByRHHWBOWtfnqgy_bBL6jIjmiRT0MitFQ';
@@ -334,51 +333,69 @@ const map_options = [
     }
 ];
 
+const style = {
+    width: '100%',
+    height: '100%',
+    position: 'relative'
+}
+
 class TreeMap extends Component {
-	constructor() {
-		super();
+    constructor() {
+        super();
 
-		this.fetchTreeMarkers();
+        this.fetchTreeMarkers();
 
-		this.state = {
-			receivedUserCoord: false,
-			center: {
-				lat: 40.7429446,
-				lng: -73.941878
-			},
-			zoom: 11,
-			treeMarkers: []
-		}
-	}
+        this.state = {
+            receivedUserCoord: false,
+            center: {
+                lat: 40.7429446,
+                lng: -73.941878
+            },
+            zoom: 13,
+            treeMarkers: [],
+            newMarker: false
+        }
+    }
 
-	fetchTreeMarkers = () => {
-		axios.get(`/getTreeMarkers`)
-			.then(res => {
-				this.setState({
-					treeMarkers: res.data.data
-				})
-			})
-	}
+    componentDidMount() {
+        this.getCurrentLocation()
+    }
 
-	getCurrentLocation = () => {
-		if (!this.state.receivedUserCoord && this.props.isGeolocationAvailable && this.props.isGeolocationEnabled && this.props.coords) {
-			this.setState({
-				receivedUserCoord: true,
-				userCoord: {
-					lat: this.props.coords.latitude,
-					lng: this.props.coords.longitude
-				},
-				center: {
-					lat: this.props.coords.latitude,
-					lng: this.props.coords.longitude
-				},
-				zoom: 13,
-				newMarker: false
-			});
-		}
-	}
+    fetchTreeMarkers = () => {
+        axios
+            .get(`/getTreeMarkers`)
+            .then(res => {
+                this.setState({
+                    treeMarkers: res.data.data
+                })
+            })
+            .catch(err => {
+                console.log(err)
+            })
+    }
 
-	onClick = ({x, y, lat, lng, event}) => {
+    getCurrentLocation = () => {
+        const { isGeolocationAvailable, isGeolocationEnabled, coords } = this.props;
+        const { receivedUserCoord } = this.state;
+
+        if (!receivedUserCoord && isGeolocationAvailable && isGeolocationEnabled && coords) {
+            this.setState({
+                receivedUserCoord: true,
+                userCoord: {
+                    lat: this.props.coords.latitude,
+                    lng: this.props.coords.longitude
+                },
+                center: {
+                    lat: this.props.coords.latitude,
+                    lng: this.props.coords.longitude
+                },
+                zoom: 13,
+                newMarker: false
+            });
+        }
+    }
+
+    onClick = ({x, y, lat, lng, event}) => {
 		if (this.state.newMarker) {
 			const seedNames = [
 				{ name: 'tree' },
@@ -404,43 +421,47 @@ class TreeMap extends Component {
 		}
 	}
 
-	handleNewMarker = () => {
-		this.setState({
-			newMarker: true
-		})
-	}
+    handleNewMarker = () => {
+        this.setState({
+            newMarker: true
+        })
+    }
 
-	render() {
-		this.getCurrentLocation();
-		console.log(this.state)
-		return (
-			<div style={{ height: '900px', width: '900px' }} >
-				<button onClick={this.handleNewMarker}>new tree</button>
-        <GoogleMap
-          bootstrapURLKeys={{ key: google_map_api_key }}
-          center={this.state.center || {lat: 40.7429446, lng: -73.941878}}
-          zoom={this.state.zoom || 11}
-          options={{ styles: map_options }}
-          onClick={this.onClick}
-        >
-        	{this.state.treeMarkers.map(marker => (
-        		<TreeMarker
-        			lat={marker.lat}
-        			lng={marker.lng}
-        			marker={marker}
-        		/>
-        	))}
-        </GoogleMap>
-      </div>
-		)
-	}
+    render() {
+        const { center, zoom, treeMarkers, newMarker } = this.state
+        console.log(this.state)
+        const cursorClass = newMarker ? `cursor-tree` : null
+
+        return (
+            <div className={`map-container ${cursorClass}`}>
+                <button onClick={this.handleNewMarker}>Plant a tree</button>
+                <GoogleMap
+                    bootstrapURLKeys={{ key: google_map_api_key }}
+                    center={center || { lat: 40.7429446, lng: -73.941878 }}
+                    zoom={zoom || 13}
+                    options={{ styles: map_options }}
+                    onClick={this.onClick}
+                    style={style}
+                >
+                    {treeMarkers.map((marker, idx) => (
+                        <TreeMarker
+                            lat={marker.lat}
+                            lng={marker.lng}
+                            marker={marker}
+                            key={idx}
+                        />
+                    ))}
+                </GoogleMap>
+            </div>
+        )
+    }
 }
 
 export default geolocated({
-  positionOptions: {
-    enableHighAccuracy: false,
-  },
-  userDecisionTimeout: 5000,
+    positionOptions: {
+        enableHighAccuracy: false,
+    },
+    userDecisionTimeout: 5000,
 })(TreeMap);
 
 // this.state.treeMarkers.map(marker => (

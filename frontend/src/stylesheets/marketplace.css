@@ -34,7 +34,8 @@
     color: #ffffff;
 }
 
-.marketplace-container button:active {
+.marketplace-container button:active,
+.marketplace-container button:focus {
     outline: none;
 }
 
