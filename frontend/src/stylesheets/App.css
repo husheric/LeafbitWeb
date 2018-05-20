@@ -1,7 +1,7 @@
 /* SIDE NAVIGATION BAR */
 
 .sidebar {
-  background-color: salmon;
+  /* background-color: salmon; */
   display: flex;
   flex-direction: column;
   width: 56px;
@@ -10,6 +10,7 @@
   top: 57.6px;
   align-items: center;
   z-index: 9;
+  transition: 0.3s all;
 }
 
 .sidebar a {
@@ -19,12 +20,22 @@
 }
 
 .sidebar-hidden {
-  background-color: rgba(255, 0, 0, 0.2);
+  /* background-color: rgba(255, 0, 0, 0.2); */
+  width: 0;
 }
 
+  .sidebar-hidden a {
+    visibility: hidden;
+  }
+
 .sidebar-visible {
-  background-color: rgba(255, 0, 255, 0.2);
+  visibility: visible;
+  background-color: rgba(10, 0, 18, 0.3);
 }
+
+  .sidebar-visible a {
+    visibility: visible;
+  }
 
 
 /* TOP BAR */
