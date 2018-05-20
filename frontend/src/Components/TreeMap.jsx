@@ -429,11 +429,10 @@ class TreeMap extends Component {
 
     render() {
         const { center, zoom, treeMarkers, newMarker } = this.state
-        console.log(this.state)
         const cursorClass = newMarker ? `cursor-tree` : null
 
         return (
-            <div className={`map-container ${cursorClass}`} data-aos="fade-up">
+            <div className={`map-container ${cursorClass}`}>
                 <button onClick={this.handleNewMarker}>Plant a tree</button>
                 <GoogleMap
                     bootstrapURLKeys={{ key: google_map_api_key }}
