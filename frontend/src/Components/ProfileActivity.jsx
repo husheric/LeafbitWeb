@@ -5,11 +5,13 @@ class ProfileActivity extends Component {
         const { location, date, treeImg } = this.props.activity
 
         return (
-            <div>
+            <div className="ind-activity">
                 <h1>{location}</h1>
                 <h3>{date}</h3>
-                <img src={treeImg} alt="tree" />
-                <p>Pinned Tree</p>
+                <div className="img-container">
+                    <img src={treeImg} alt="tree" />
+                    <p>Pinned Tree</p>
+                </div>
             </div>
         )
     }

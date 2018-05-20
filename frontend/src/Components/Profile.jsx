@@ -30,10 +30,10 @@ class Profile extends Component {
         const { activities } = this.state;
 
         return (
-            <div className="profile-container">
+            <div className="profile-container" data-aos="fade-up">
                 <div className="profile-header">
                     <div className="header-left">
-                        <img src="" alt="profile img" />
+                        <img src="./assets/healthy_growing.png" alt="profile img" />
                     </div>
                     <div className="header-right">
                         <h1>Yueran</h1>
@@ -42,7 +42,7 @@ class Profile extends Component {
                     </div>
                 </div>
                 <div className="profile-activity">
-                    <h1>My Activities</h1>
+                    <h1 className="title">My Activities</h1>
                     {activities.map(activity => <ProfileActivity activity={activity} />)}
                 </div>
             </div>

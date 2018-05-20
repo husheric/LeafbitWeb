@@ -6,21 +6,83 @@
     display: flex;
     flex-direction: column;
     margin: 0 auto;
+    margin-top: 1.2rem;
 }
 
 .profile-header {
     display: flex;
     width: 100%;
+    height: 120px;
+    padding: 0.6rem 0;
 }
 
 .header-left {
-    width: 30%;
-    background-color: rgba(0, 255, 0, 0.2);
+    width: 35%;
+}
+
+.header-left img {
+    width: auto;
+    height: 100%;
 }
 
 .header-right {
     display: flex;
     flex-direction: column;
-    width: 70%;
-    background-color: rgba(0, 255, 0, 0.3);
+    width: 65%;
+    justify-content: center;
+    line-height: 1.2;
+}
+
+.header-right h1 {
+    font-size: 1.4rem;
+    font-weight: 300;
+}
+
+.header-right h3 {
+    font-size: 1rem;
+}
+
+.profile-activity .title {
+    font-size: 1.4rem;
+    font-weight: 300;
+    padding: 0.6rem;
+    padding-bottom: 0;
+}
+
+/* INDIVIDUAL PROFILE ACTIVITY */
+
+.ind-activity {
+    display: flex;
+    flex-direction: column;
+    margin: 0.6rem 0;
+    padding: 0.6rem;
+}
+
+.ind-activity h1 {
+    font-size: 1.4rem;
+    font-weight: 300;
+}
+
+.ind-activity h3 {
+    font-size: 1.2rem;
+}
+
+.ind-activity .img-container {
+    display: flex;
+    margin: 0.6rem 0;
+}
+
+.ind-activity .img-container img {
+    height: 60px;
+    width: auto;
+}
+
+.ind-activity .img-container p {
+    font-size: 1rem;
+}
+
+@media screen and (max-width: 400px) {
+    .profile-container {
+        width: 98%;
+    }
 }
