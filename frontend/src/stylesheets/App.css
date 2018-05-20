@@ -1,6 +1,56 @@
+/* SIDE NAVIGATION BAR */
+
+.sidebar {
+  /* background-color: salmon; */
+  display: flex;
+  flex-direction: column;
+  width: 56px;
+  height: 100vh;
+  position: fixed;
+  top: 57.6px;
+  align-items: center;
+  z-index: 9;
+  transition: 0.3s all;
+}
+
+.sidebar a {
+  display: inline-block;
+  color: #ffffff;
+  padding: .8rem 0;
+}
+
+.sidebar-hidden {
+  width: 0;
+}
+
+  .sidebar-hidden a {
+    visibility: hidden;
+  }
+
+.sidebar-visible {
+  visibility: visible;
+  background-color: rgb(190,187,192);
+}
+
+  .sidebar-visible a {
+    visibility: visible;
+  }
+
 
 /* TOP BAR */
 .top {
   background-color: rgba(10, 0, 18, 0.2);
-  padding: .8rem;
+  padding: .8rem .6rem;
+  display: flex;
+  align-items: flex-end;
+}
+
+.top div {
+  color: #ffffff;
+  display: inline-block;
+  cursor: pointer;
+}
+
+#top-logo {
+  padding: 0 .8rem;
 }
