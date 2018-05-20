@@ -378,11 +378,27 @@ class TreeMap extends Component {
 		}
 	}
 
-	_onClick = ({x, y, lat, lng, event}) => {
-		console.log(x, y, lat, lng, event);
+	onClick = ({x, y, lat, lng, event}) => {
 		if (this.state.newMarker) {
+			const seedNames = [
+				{ name: 'tree' },
+				{ name: 'pine_tree' },
+				{ name: 'tall_tree' },
+				{ name: 'cactus' }
+			];
+			const tree = seedNames[Math.floor(Math.random() * Math.floor(4))].name;
+			console.log(tree)
+
+			axios.post('/insertTreeMarker', {
+				planted_by: 1,
+				tree,
+				lat,
+				lng
+			})
+
+
 			this.setState({
-				treeMarkers: [...this.state.treeMarkers, { tree: 'cactus', lat, lng }],
+				treeMarkers: [...this.state.treeMarkers, { tree, lat, lng }],
 				newMarker: false
 			})
 		}
@@ -405,7 +421,7 @@ class TreeMap extends Component {
           center={this.state.center || {lat: 40.7429446, lng: -73.941878}}
           zoom={this.state.zoom || 11}
           options={{ styles: map_options }}
-          onClick={this._onClick}
+          onClick={this.onClick}
         >
         	{this.state.treeMarkers.map(marker => (
         		<TreeMarker
