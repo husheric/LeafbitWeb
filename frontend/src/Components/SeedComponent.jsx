@@ -33,7 +33,7 @@ class SeedComponent extends Component {
 					<img src={seedDict[seed.image]} />
 				</div>
 				<h1 className="name">{seed.displayName}</h1>
-				<h1 className="cost">${seed.cost}</h1>
+				<h1 className="cost">{typeof seed.cost === 'number' ? '$' + seed.cost : seed.cost } </h1>
 			</div>
 		)
 	}

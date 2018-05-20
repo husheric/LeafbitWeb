@@ -19,10 +19,11 @@ class Marketplace extends Component {
 		super();
 
 		this.seeds = [
-			{ displayName: 'Cactus', name: 'cactus', cost: 5, image: 'cactus' },
+			{ displayName: 'Willow Tree', name: 'willow_tree', cost: 'FREE', image: 'cactus' },
 			{ displayName: 'Apple Tree', name: 'tree', cost: 1, image: 'tree' },
 			{ displayName: 'Pine Tree', name: 'pine_tree', cost: 3, image: 'pine_tree' },
-			{ displayName: 'Tall Tree', name: 'tall_tree', cost: 4, image: 'tall_tree' }
+			{ displayName: 'Tall Tree', name: 'tall_tree', cost: 4, image: 'tall_tree' },
+			{ displayName: 'Cactus', name: 'cactus', cost: 5, image: 'cactus' }
 		];
 
 		this.state = {
