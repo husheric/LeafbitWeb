@@ -4,7 +4,8 @@ import Homepage from './Components/Homepage';
 import Marketplace from './Components/Marketplace';
 import TreeProgress from './Components/TreeProgress';
 import './stylesheets/App.css';
-import TreeMap from './Components/TreeMap'
+import TreeMap from './Components/TreeMap';
+import Profile from './Components/Profile';
 
 class App extends Component {
   constructor() {
@@ -29,10 +30,10 @@ class App extends Component {
       <div>
 
         <div className={`sidebar sidebar-${sidebarClass}`}>
-          <Link to="/"><i className="fas fa-tree fa-fw fa-3x"></i></Link>
-          <Link to="/market"><i className="fas fa-store fa-fw fa-3x"></i></Link>
-          <Link to="/map"><i className="fas fa-map-marker-alt fa-fw fa-3x"></i></Link>
-          <Link to="/profile"><i className="fas fa-user fa-fw fa-3x"></i></Link>
+          <Link to="/" onClick={this.handleSidebar}><i className="fas fa-tree fa-fw fa-3x" onClick={this.handleSidebar}></i></Link>
+          <Link to="/market" onClick={this.handleSidebar}><i className="fas fa-store fa-fw fa-3x" onClick={this.handleSidebar}></i></Link>
+          <Link to="/map" onClick={this.handleSidebar}><i className="fas fa-map-marker-alt fa-fw fa-3x" onClick={this.handleSidebar}></i></Link>
+          <Link to="/profile" onClick={this.handleSidebar}><i className="fas fa-user fa-fw fa-3x" onClick={this.handleSidebar}></i></Link>
         </div>
 
         <div className="top">
@@ -46,7 +47,7 @@ class App extends Component {
           <Route exact path="/" component={TreeProgress} />
           <Route path="/market" component={Marketplace} />
           <Route path="/map" component={TreeMap} />
-          <Route path="/profile" component={Marketplace} />
+          <Route path="/profile" component={Profile} />
         </Switch>
       </div>
     );
