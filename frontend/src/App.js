@@ -3,10 +3,11 @@ import { Link, Route, Switch } from 'react-router-dom';
 import Homepage from './Components/Homepage';
 import Marketplace from './Components/Marketplace';
 import TreeProgress from './Components/TreeProgress';
-
-import './stylesheets/App.css';
 import TreeMap from './Components/TreeMap';
 import Profile from './Components/Profile';
+import './stylesheets/App.css';
+import AOS from 'aos';
+import '../node_modules/aos/dist/aos.css';
 
 class App extends Component {
   constructor() {
@@ -23,7 +24,10 @@ class App extends Component {
   }
 
   render() {
-    console.log(this.state);
+    AOS.init({
+      once: true
+    });
+    
     const { sidebar } = this.state;
     const sidebarClass = sidebar ? `visible` : `hidden`;
 
