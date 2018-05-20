@@ -47,13 +47,8 @@ class App extends Component {
         <Switch>
           <Route exact path="/" component={TreeProgress} />
           <Route path="/market" component={Marketplace} />
-<<<<<<< HEAD
-          <Route path="/profile" component={Marketplace} />
-          <Route path="/map" component={TreeMap} />
-=======
           <Route path="/map" component={TreeMap} />
           <Route path="/profile" component={Profile} />
->>>>>>> 2118b5be5e961e3d92c1c99ee77b263aadfe4764
         </Switch>
       </div>
     );
