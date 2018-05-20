@@ -86,7 +86,7 @@ class Marketplace extends Component {
 		}
 
 		return (
-			<div className="marketplace-container">
+			<div className="marketplace-container" data-aos="fade-up">
 				<h1 className="title">Choose one</h1>
 				{this.seeds.map(seed => (
 					<SeedComponent
