@@ -13,7 +13,7 @@ class Profile extends Component {
         const { activities } = this.state;
 
         return (
-            <div>
+            <div className="profile-container">
                 <div className="profile-header">
                     <h1>Name</h1>
                     <h3>Location</h3>

@@ -30,10 +30,10 @@ class App extends Component {
       <div>
 
         <div className={`sidebar sidebar-${sidebarClass}`}>
-          <Link to="/"><i className="fas fa-tree fa-fw fa-3x"></i></Link>
-          <Link to="/market"><i className="fas fa-store fa-fw fa-3x"></i></Link>
-          <Link to="/map"><i className="fas fa-map-marker-alt fa-fw fa-3x"></i></Link>
-          <Link to="/profile"><i className="fas fa-user fa-fw fa-3x"></i></Link>
+          <Link to="/"><i className="fas fa-tree fa-fw fa-3x" onClick={this.handleSidebar}></i></Link>
+          <Link to="/market"><i className="fas fa-store fa-fw fa-3x" onClick={this.handleSidebar}></i></Link>
+          <Link to="/map"><i className="fas fa-map-marker-alt fa-fw fa-3x" onClick={this.handleSidebar}></i></Link>
+          <Link to="/profile"><i className="fas fa-user fa-fw fa-3x" onClick={this.handleSidebar}></i></Link>
         </div>
 
         <div className="top">
