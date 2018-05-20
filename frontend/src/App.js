@@ -3,10 +3,11 @@ import { Link, Route, Switch } from 'react-router-dom';
 import Homepage from './Components/Homepage';
 import Marketplace from './Components/Marketplace';
 import TreeProgress from './Components/TreeProgress';
+import TreeMap from './Components/TreeMap';
 import './stylesheets/nav.css';
 import './stylesheets/App.css';
 
-import TreeMap from './Components/TreeMap'
+// import TreeMap from './Components/TreeMap'
 // import logo from './logo.svg';
 // import './App.css';
 
@@ -48,6 +49,7 @@ class App extends Component {
           <Route exact path="/" component={TreeProgress} />
           <Route path="/market" component={Marketplace} />
           <Route path="/profile" component={Marketplace} />
+          <Route path="/map" component={TreeMap} />
         </Switch>
       </div>
     );
