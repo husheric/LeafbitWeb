@@ -1,15 +1,15 @@
-
-
 /* SIDE NAVIGATION BAR */
 
 .sidebar {
   background-color: salmon;
   display: flex;
   flex-direction: column;
-  width: 50px;
+  width: 56px;
   height: 100vh;
   position: fixed;
+  top: 57.6px;
   align-items: center;
+  z-index: 9;
 }
 
 .sidebar a {
@@ -30,5 +30,17 @@
 /* TOP BAR */
 .top {
   background-color: rgba(10, 0, 18, 0.2);
-  padding: .8rem;
+  padding: .8rem .6rem;
+  display: flex;
+  align-items: flex-end;
+}
+
+.top div {
+  color: #ffffff;
+  display: inline-block;
+  cursor: pointer;
+}
+
+#top-logo {
+  padding: 0 .8rem;
 }
