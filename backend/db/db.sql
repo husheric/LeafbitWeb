@@ -1,7 +1,7 @@
-DROP DATABASE IF EXISTS leafbit;
-CREATE DATABASE leafbit;
+-- DROP DATABASE IF EXISTS leafbit;
+-- CREATE DATABASE leafbit;
 
-\c leafbit;
+-- \c leafbit;
 
 CREATE TABLE users (
   id SERIAL PRIMARY KEY,
