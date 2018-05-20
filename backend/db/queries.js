@@ -30,7 +30,26 @@ function getTreeMarkers(req, res, next) {
 	  })
 }
 
+function insertTreeMarker(req, res, next) {
+	const { planted_by, tree, lat, lng } = req.body;
+	db
+		.none("INSERT INTO tree_markers (planted_by, tree, lat, lng) VALUES (${planted_by}, ${tree}, ${lat}, ${lng})", {
+			planted_by,
+			tree,
+			lat,
+			lng	
+		})
+		.then(data => {
+			res.status(200).json({
+				status: "success",
+				data: data,
+				message: 'inserted tree marker'
+			})
+		})
+}
+
 module.exports = {
 	getUserTree,
-	getTreeMarkers
+	getTreeMarkers,
+	insertTreeMarker
 }

@@ -3,6 +3,7 @@ import { Link, Route, Switch } from 'react-router-dom';
 import Homepage from './Components/Homepage';
 import Marketplace from './Components/Marketplace';
 import TreeProgress from './Components/TreeProgress';
+
 import './stylesheets/App.css';
 import TreeMap from './Components/TreeMap';
 import Profile from './Components/Profile';

@@ -395,15 +395,31 @@ class TreeMap extends Component {
         }
     }
 
-    _onClick = ({ x, y, lat, lng, event }) => {
-        // console.log(x, y, lat, lng, event);
-        if (this.state.newMarker) {
-            this.setState({
-                treeMarkers: [...this.state.treeMarkers, { tree: 'cactus', lat, lng }],
-                newMarker: false
-            })
-        }
-    }
+    onClick = ({x, y, lat, lng, event}) => {
+		if (this.state.newMarker) {
+			const seedNames = [
+				{ name: 'tree' },
+				{ name: 'pine_tree' },
+				{ name: 'tall_tree' },
+				{ name: 'cactus' }
+			];
+			const tree = seedNames[Math.floor(Math.random() * Math.floor(4))].name;
+			console.log(tree)
+
+			axios.post('/insertTreeMarker', {
+				planted_by: 1,
+				tree,
+				lat,
+				lng
+			})
+
+
+			this.setState({
+				treeMarkers: [...this.state.treeMarkers, { tree, lat, lng }],
+				newMarker: false
+			})
+		}
+	}
 
     handleNewMarker = () => {
         this.setState({
@@ -419,16 +435,14 @@ class TreeMap extends Component {
         return (
             <div className={`map-container ${cursorClass}`}>
                 <button onClick={this.handleNewMarker}>Plant a tree</button>
-
                 <GoogleMap
                     bootstrapURLKeys={{ key: google_map_api_key }}
                     center={center || { lat: 40.7429446, lng: -73.941878 }}
                     zoom={zoom || 13}
                     options={{ styles: map_options }}
-                    onClick={this._onClick}
+                    onClick={this.onClick}
                     style={style}
                 >
-
                     {treeMarkers.map((marker, idx) => (
                         <TreeMarker
                             lat={marker.lat}
@@ -437,7 +451,6 @@ class TreeMap extends Component {
                             key={idx}
                         />
                     ))}
-
                 </GoogleMap>
             </div>
         )

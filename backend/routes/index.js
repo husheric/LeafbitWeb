@@ -11,4 +11,6 @@ router.get('/getUserTree/:user_id', db.getUserTree);
 
 router.get('/getTreeMarkers', db.getTreeMarkers);
 
+router.post('/insertTreeMarker', db.insertTreeMarker);
+
 module.exports = router;
