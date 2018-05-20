@@ -2,13 +2,41 @@
 
 .marketplace-container {
     width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.marketplace-container .title {
+    font-size: 1.6rem;
+    background-color: rgba(255, 0, 0, 0.2);
+}
+
+.marketplace-container button {
+    outline: none;
+    border: none;
+    border: 2px solid rgba(0, 194, 145, 0.8);
+    background-color: transparent;
+    border-radius: 2px;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 100;
+    font-size: 1.6rem;
+    padding: 0.8rem;
+    width: 160px;
+    cursor: pointer;
+    transition: 0.2s all;
+    margin: 0.8rem auto;
+}
+
+.marketplace-container button:hover {
+    background-color: rgba(0, 194, 145, 0.8);
+    color: #ffffff;
 }
 
 /* SEED COMPONENT */
 .seed-container {
     background-color: #ffffff;
     display: flex;
-    margin: 1.2rem auto;
+    margin: .8rem auto;
     padding: .8rem;
     width: 68%;
     justify-content: space-between;
@@ -34,7 +62,7 @@
 }
 
 .seed-img-container img {
-    height: 120px;
+    height: 100px;
     width: auto;
     transition: 0.2s all;
 }
@@ -57,7 +85,7 @@
         width: 90%;
     }
     .seed-img-container img {
-        height: 100px;
+        height: 80px;
     }
 }
 
