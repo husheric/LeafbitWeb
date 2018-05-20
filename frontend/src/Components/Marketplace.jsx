@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import { Redirect } from 'react-router-dom';
 import SeedComponent from './SeedComponent';
-import Purchase from './Purchase';
-import Modal from 'react-modal';
+// import Purchase from './Purchase';
+// import Modal from 'react-modal';
 import '../stylesheets/marketplace.css';
 
 /*
@@ -88,11 +88,12 @@ class Marketplace extends Component {
 		return (
 			<div className="marketplace-container" data-aos="fade-up">
 				<h1 className="title">Choose one</h1>
-				{this.seeds.map(seed => (
+				{this.seeds.map((seed, idx) => (
 					<SeedComponent
 						seed={seed}
 						activeSeed={activeSeed}
 						toggleActive={this.toggleActive}
+						key={idx}
 					/>
 				))}
 				<button onClick={this.handleNext}>Next</button>

@@ -12,14 +12,10 @@ const imageDict = {
 }
 
 class TreeMarker extends Component {
-	constructor() {
-		super();
-	}
-
 	render() {
 		return (
 			<div>
-				<img src={imageDict[this.props.marker.tree]} width='18px' height='18px' />
+				<img src={imageDict[this.props.marker.tree]} alt="tree" width='18px' height='18px' />
 			</div>
 		)
 	}

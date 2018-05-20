@@ -30,7 +30,7 @@ class SeedComponent extends Component {
 		return (
 			<div className={`seed-container seed-${activeClass}`} onClick={() => toggleActive(seed)} >
 				<div className="seed-img-container">
-					<img src={seedDict[seed.image]} />
+					<img src={seedDict[seed.image]} alt="tree" />
 				</div>
 				<h1 className="name">{seed.displayName}</h1>
 				<h1 className="cost">{typeof seed.cost === 'number' ? '$' + seed.cost : seed.cost } </h1>

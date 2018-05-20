@@ -1,26 +1,26 @@
-import React, { Component } from 'react';
+// import React, { Component } from 'react';
 
-/*
-	____TODOS____
-	will display progress of current tree
+// /*
+// 	____TODOS____
+// 	will display progress of current tree
 
-	____data needed____
-	user seeds
-	progress of seeds
-*/
+// 	____data needed____
+// 	user seeds
+// 	progress of seeds
+// */
 
-class Homepage extends Component {
-	constructor() {
-		super();
+// class Homepage extends Component {
+// 	constructor() {
+// 		super();
 
-	}
-	render() {
-		return (
-			<div>
+// 	}
+// 	render() {
+// 		return (
+// 			<div>
 				
-			</div>
-		)
-	}
-}
+// 			</div>
+// 		)
+// 	}
+// }
 
-export default Homepage;
+// export default Homepage;

@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import GoogleMap, { Marker } from 'google-map-react';
+import GoogleMap from 'google-map-react';
 import { geolocated } from 'react-geolocated';
 import axios from 'axios';
 import '../stylesheets/map.css';
