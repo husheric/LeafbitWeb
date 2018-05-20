@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import SeedComponent from './SeedComponent';
+import Purchase from './Purchase';
 import Modal from 'react-modal';
 import '../stylesheets/marketplace.css';
 
@@ -24,59 +25,91 @@ class Marketplace extends Component {
 		];
 
 		this.state = {
-			showModal: false,
-			seed: null
+			// showModal: false,
+			// seed: {},
+			activeSeed: {}
 		}
 	}
 
-	handleOpenModal = seed => {
-		this.setState({
-			showModal: true,
-			seed: { ...seed, paymentAmount: seed.cost }
-		})
+	// Opens modal
+	// handleOpenModal = seed => {
+	// 	this.setState({
+	// 		showModal: true,
+	// 		seed: { ...seed, paymentAmount: seed.cost }
+	// 	})
+	// }
+
+	// Closes modal 
+	// handleCloseModal = () => {
+	// 	this.setState({
+	// 		showModal: false,
+	// 		seed: null
+	// 	})
+	// }
+
+	// Handles Buy and Gift buttons 
+	// handleButton = (name) => {
+	// 	console.log(name);
+	// }
+
+	// Prevents form from refreshing on enter 
+	// handleSubmit = e => {
+	// 	e.preventDefault();
+	// }
+
+	// handlePaymentChange = e => {
+	// 	this.setState({
+	// 		seed: { ...this.state.seed, paymentAmount: e.target.value }
+	// 	})
+	// }
+
+	// When user chooses a plant 
+	toggleActive = (seed) => {
+		const { activeSeed } = this.state;
+		if (!activeSeed.name) {
+			this.setState({
+				activeSeed: seed
+			})
+		} else {
+			this.setState({
+				activeSeed: {}
+			})
+		}
 	}
 
-	handleCloseModal = () => {
-		this.setState({
-			showModal: false,
-			seed: null
-		})
-	}
-
-	handleSubmit = () => {
-
-	}
-
-	handlePaymentChange = e => {
-		this.setState({
-			seed: { ...this.state.seed, paymentAmount: e.target.value }
-		})
-	}
+	// When user clicks next 
 
 	render() {
 		console.log(this.state)
+		const { activeSeed } = this.state;
+
 		return (
 			<div className="marketplace-container">
+				<h1>Choose one:</h1>
 				{this.seeds.map(seed => (
 					<SeedComponent
 						seed={seed}
-						handleOpenModal={this.handleOpenModal}
+						activeSeed={activeSeed}
+						toggleActive={this.toggleActive}
+					// handleOpenModal={this.handleOpenModal}
 					/>
 				))}
-				{this.state.seed &&
+				<button>Next</button>
+				{/* {seed &&
 					<Modal
 						isOpen={this.state.showModal}
 						contentLabel="PurchaseModal"
+						className="purchase-modal"
 						onRequestClose={this.handleCloseModal}
 					>
-						<button onClick={this.handleCloseModal}>Close</button>
-						<form onSubmit={this.handleSubmit} >
-							Donation: $<input type='number' min='0.00' step='0.01' value={this.state.seed.paymentAmount} onChange={this.handlePaymentChange} />
-							<input type='submit' value='buy' />
-							<input type='submit' value='gift' />
-						</form>
+						<Purchase
+							seed={seed}
+							handleCloseModal={this.handleCloseModal}
+							handleSubmit={this.handleSubmit}
+							handlePaymentChange={this.handlePaymentChange}
+							handleButton={this.handleButton} />
 					</Modal>
-				}
+				} */}
 			</div>
 		)
 	}

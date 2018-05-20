@@ -13,12 +13,6 @@ import '../stylesheets/marketplace.css';
 	seed info - price, name, image
 */
 
-// const style = {
-// 	border: '5px solid black',
-// 	width: '350px',
-// 	height: '350px'
-// }
-
 const seedDict = {
 	cactus: cactus,
 	pine_tree: pine_tree,
@@ -28,9 +22,13 @@ const seedDict = {
 
 class SeedComponent extends Component {
 	render() {
-		const { seed, handleOpenModal } = this.props;
+		const { seed, activeSeed, toggleActive } = this.props;
+
+		// If seed's name equals active seed's name, add class 
+		const activeClass = seed.name === activeSeed.name ? `active` : null;
+
 		return (
-			<div className="seed-container" onClick={() => handleOpenModal(seed)} >
+			<div className={`seed-container seed-${activeClass}`} onClick={() => toggleActive(seed)} >
 				<div className="seed-img-container">
 					<img src={seedDict[seed.image]} />
 				</div>

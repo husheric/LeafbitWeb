@@ -13,14 +13,19 @@
     width: 68%;
     justify-content: space-between;
     align-items: center;
+    border: 2px solid transparent;
     border-radius: 2px;
     cursor: pointer;
     transition: 0.3s all;
 }
 
-.seed-container:hover {
-    transform: translateY(-2px);
+.seed-active {
+    border: 2px solid rgba(0, 194, 145, 0.8);
 }
+
+/* .seed-container:hover {
+    transform: translateY(-2px);
+} */
 
 .seed-img-container {
     width: 25%;
@@ -29,7 +34,7 @@
 }
 
 .seed-img-container img {
-    height: 140px;
+    height: 120px;
     width: auto;
     transition: 0.2s all;
 }
