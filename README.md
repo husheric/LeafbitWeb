@@ -4,6 +4,8 @@ Buy a seed. Watch your tree grow as you progress towards your activity goals. Pl
 
 Feel good about partner organizations planting a tree in real life. 
 
+This web app pairs with [Leafbit Fitbit Clock Face](https://github.com/helencho/leafbit). 
+
 ## Features 
 
 **Home**
