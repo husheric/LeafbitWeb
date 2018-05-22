@@ -44,7 +44,7 @@ class App extends Component {
           <div onClick={this.handleSidebar}>
             <i className="fas fa-bars fa-fw fa-3x"></i>
           </div>
-          <img src="../assets/icon.png" alt="Leafbit" id="top-logo" />
+          <img src="./assets/icon.png" alt="Leafbit" id="top-logo" />
         </div>
 
         <Switch>
